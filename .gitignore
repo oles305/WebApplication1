@@ -259,3 +259,7 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/WebApplication1/Content/bootstrap.css
+/WebApplication1/Content/bootstrap.min.css
+/WebApplication1/fonts/glyphicons-halflings-regular.svg
+/WebApplication1/Scripts

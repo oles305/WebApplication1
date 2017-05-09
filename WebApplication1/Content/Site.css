@@ -1,0 +1,68 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    
+}
+
+.mainPage {
+    background-image: url("../Pictures/EU_6.jpg");
+    background-size: cover;
+}
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 50px;
+    padding-right: 15px;
+    margin-top: 50px;
+    /*opacity: 0.8;
+    background-color:coral;*/
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default 
+input,
+select,
+textarea {
+    max-width: 280px;
+}*/
+
+.navbar-inverse {
+    background-color: white;
+    color:#14171a;
+}
+
+.mybtn {
+padding:6px 12px;
+}
+
+.mycontainer {
+    color:white;
+}
+
+.mylogin{
+    width:100%;
+}
+
+.mypassw {
+    width:100%;
+}
+
+.myinput {
+    padding-right:0;
+}
+
+.formcontainer {
+    padding:20px 10px 0 40px;
+    margin:10px;
+    background-color: cornsilk;
+}
+
+.mybtn-sugnup {
+    margin-left:50%;
+    background-color:orange;
+}

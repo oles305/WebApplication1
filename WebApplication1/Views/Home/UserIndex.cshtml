@@ -1,0 +1,50 @@
+﻿
+@model IEnumerable<WebApplication1.Models.VieModels.ViewMessage>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@if (Session["login"] == null)
+{
+    <div class="jumbotron">
+        <h1>Guest book</h1>
+        <p class="lead">You must register to add messages.</p>
+        <p>
+            <a href="/Users/LogIn" class="btn btn-primary btn-lg">Log in &raquo;</a>
+            <a href="/User/CheckIn" class="btn btn-primary btn-lg">Check in  &raquo;</a>
+        </p>
+    </div>
+}
+else
+{
+    <div class="jumbotron">
+        <p>
+            <h3>Hello, @Session["login"]</h3>
+            @Html.ActionLink("Log out", "LogOut", "Users", null, new { @class = "btn btn-primary btn-lg" })
+        </p>
+    </div>
+    <div class="row">
+        <form action="Messages/AddMessage">
+            <div class="col-md-4">
+                <textarea name="messageString" cols="200" rows="10"></textarea>
+                <div>
+                    <button type="submit" class="btn btn-primary btn-lg">Add &raquo;</button>
+                </div>
+            </div>
+        </form>
+    </div>
+}
+<!-- -->
+<div class="jumbotron">
+
+
+    <div>
+        @foreach (var vm in Model)
+        {
+            <div>@vm.User  <span class="well well-small">@vm.MessageDate</span></div>
+            <div>@vm.MessageText</div>
+        }
+    </div>
+</div>
+

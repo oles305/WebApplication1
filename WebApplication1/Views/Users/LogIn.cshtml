@@ -1,0 +1,53 @@
+﻿@model WebApplication1.Models.User
+
+@{
+    ViewBag.Title = "Log in";
+}
+
+<div class="container">
+    <h2>Log in</h2>
+    <blockquote>
+        <p class="text-muted text-info">The username and password you entered did not match our records. Please double-<br />check and try again.</p>
+    </blockquote>
+    @using (Html.BeginForm("LogIn","Users", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <div class="col-md-4">
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-4">
+                    @Html.EditorFor(model => model.Pasword,
+                               new
+                               {
+                                   htmlAttributes = new
+                                   {
+                                       @class = "form-control mypassw",
+                                       @type = "password",
+                                       @placeholder = "password"
+                                   }
+                               })
+                    @Html.ValidationMessageFor(model => model.Pasword, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-2">
+                    <input type="submit" value="Log in" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Sign up now »", "Index")
+    </div>
+</div>

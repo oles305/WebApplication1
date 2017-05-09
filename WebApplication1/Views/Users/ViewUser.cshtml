@@ -1,0 +1,48 @@
+﻿@model WebApplication1.Models.VieModels.ViewUser
+
+@{
+    ViewBag.Title = "UserView";
+}
+
+<h2>UserView</h2>
+
+<div class="row">
+    <div class="col-md-3">
+        <img src="/../Pictures/userIconCat.png" class="img-thumbnail imgAvaLarge"/>
+        <p class="lead"><b>
+            @Html.DisplayFor(n => n.User.Name)
+        </b></p>
+    </div>
+    <div class="col-md-6">
+        @foreach (var item in Model.Messages)
+        {
+            if (@item.UserName == @Model.User.Name){
+                <img src="/../Pictures/userIconCat.png" class="img-circle" width="50" />
+            }
+            else{
+                <img src="/../Pictures/userIcon.png" class="img-circle"  width="50"/>
+            }
+            <div><b>@item.UserName</b> <small class="text-muted">@item.MessageDate</small></div>
+            <p  class="text-info lead">@item.MessageText</p>
+            <br />
+        }
+        
+        <input type="button" value="Add Message" class="btn btn-primary" />
+    </div>
+    <div class="col-md-3">
+        @foreach (var item in Model.UsersNames)
+        {
+            if (@item == @Model.User.Name)
+            {
+                <img src="/../Pictures/userIconCat.png" class="img-circle"  width="50"/>
+            }
+            else
+            {
+                <img src="/../Pictures/userIcon.png" class="img-circle"  width="50"/>
+            }
+            <div>@item</div>
+            <br />
+        }
+    </div>
+    
+</div>
